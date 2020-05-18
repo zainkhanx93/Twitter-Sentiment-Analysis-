@@ -12,6 +12,7 @@ from torch.utils.data import DataLoader, TensorDataset
 from string import punctuation
 from collections import Counter
 from SentimentAnalysisLSTM import SentimentAnalysisLSTM
+from textblob import TextBlob
 
 # MUST DO'S
     # TODO: Split training data into training/validation 90/10
