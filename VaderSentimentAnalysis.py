@@ -11,13 +11,15 @@ def readAndProcessingTweets(dataFile):
 
 class VaderSentimentAnalysis:
     testData = "test.csv"
-    #listOfTweets = readAndProcessingTweets(testData)
+    listOfTweets = readAndProcessingTweets(testData)
     sia = SentimentIntensityAnalyzer()
 
-    #for tweets in listOfTweets:
-    sentiment_dictionary = sia.polarity_scores("Two places I'd invest all my money if I could: 3D printing and Self-driving cars!!!")
+    for tweets in listOfTweets:
+        sentiment_dictionary = sia.polarity_scores(tweets)
+        print(sentiment_dictionary)
+
+    print("Example Sentences")
+    sentiment_dictionary = sia.polarity_scores("This place makes my taste buds want to pack up and move to a different country!")
     print(sentiment_dictionary)
-    sentiment_dictionary = sia.polarity_scores("Awesome! Google driverless cars will help the blind travel more often; https://t.co/QWuXR0FrBpv")
-    print(sentiment_dictionary)
-    sentiment_dictionary = sia.polarity_scores("Autonomous vehicles could reduce traffic fatalities by 90%...I'm in!")
+    sentiment_dictionary = sia.polarity_scores("Self-driving cars? Say Hasta La Vista, Baby!")
     print(sentiment_dictionary)
